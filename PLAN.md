@@ -234,6 +234,56 @@ This approach ensures:
 - All original JavaScript libraries working via Next.js Script component
 - Font Awesome icons fully functional
 - All image paths updated to work with Next.js
+- **No README files until project completion**
+
+---
+
+## 🎨 PHASE 6: REBRANDING (FINAL STEP)
+
+**When:** After ALL pages and features are complete  
+**Why:** Makes it easier to change everything at once with find/replace
+
+### What Will Be Changed:
+
+#### 1. **Company Name/Text**
+- Site title & metadata
+- Header logo text
+- Footer text
+- All "Constrc" mentions in content
+- Contact information (phone, email, address)
+- Social media links
+
+#### 2. **Colors & Theme**
+Located in `/public/assets/css/`:
+- `color-themes/default-color.css` (current orange theme)
+- Alternative themes available: blue, green, purple, brown, yellow, olive
+- Can customize primary colors in `style.css`
+- Will set up CSS variables for easy color swapping
+
+#### 3. **Logo & Images**
+- Replace logo files in `/public/assets/images/`
+- Update favicon
+- Replace demo images with real project photos
+- Update team member photos
+- Replace service/project images
+
+#### 4. **Content**
+- Company description and mission
+- Services descriptions
+- Project details
+- Team member bios
+- Testimonials (if using real ones)
+
+### Rebranding Workflow:
+1. Global search & replace for company name
+2. Swap color theme CSS
+3. Replace logo files
+4. Update images folder
+5. Review and test entire site
+6. Update metadata & SEO
+
+**Estimated Time:** 2-3 hours  
+**Note:** Keeping "Constrc" branding during development for consistency
 
 ---
 
@@ -250,7 +300,9 @@ This approach ensures:
 1. ✅ **Navigation Working:** Fixed and fully functional
 2. ✅ **Preloader Issue:** Resolved with React component
 3. ✅ **All Sections Added:** Homepage 100% complete
-4. 🤔 **Feature Order:** Agreed - Static pages → Dark Mode → RTL → CMS
+4. ✅ **Feature Order:** Agreed - Static pages → Dark Mode → RTL → CMS
+5. ✅ **Rebranding:** Will be done at the very end for easier global changes
+6. ✅ **README:** No documentation files until project completion
 
 ---
 
