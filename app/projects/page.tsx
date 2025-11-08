@@ -516,6 +516,72 @@ export default function Projects() {
       </section>
       {/* End Contact One */}
 
+      {/* Marketing One */}
+      <section className="marketing-one">
+        <div className="outer-container">
+          <div className="animation_mode">
+            <h1>High-Quality Craftsmanship</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
+            <h1 className="light">Home Construction</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
+            <h1>Building Construction</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
+          </div>
+          <div className="animation_mode-two">
+            <h1>Architecture & Building</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
+            <h1 className="light">Material Recycling</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
+            <h1>Tools and Equipment</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
+            <h1>Building Construction</h1>
+          </div>
+        </div>
+      </section>
+      {/* End Marketing One */}
+
+      {/* Clients Box One */}
+      <div className="clients-box_one style-two">
+        <div className="clients-one_slider swiper-container">
+          <div className="swiper-wrapper">
+            <div className="swiper-slide">
+              <div className="client-image">
+                <a href="#"><img src="/assets/images/clients/1.png" alt="" /></a>
+              </div>
+            </div>
+
+            <div className="swiper-slide">
+              <div className="client-image">
+                <a href="#"><img src="/assets/images/clients/2.png" alt="" /></a>
+              </div>
+            </div>
+
+            <div className="swiper-slide">
+              <div className="client-image">
+                <a href="#"><img src="/assets/images/clients/3.png" alt="" /></a>
+              </div>
+            </div>
+
+            <div className="swiper-slide">
+              <div className="client-image">
+                <a href="#"><img src="/assets/images/clients/4.png" alt="" /></a>
+              </div>
+            </div>
+
+            <div className="swiper-slide">
+              <div className="client-image">
+                <a href="#"><img src="/assets/images/clients/3.png" alt="" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center">
+          <div className="client-one_subtitle">we&apos;re proud to partner with best-in-class clients</div>
+        </div>
+      </div>
+      {/* End Clients Box One */}
+
       <Footer />
     </>
   );
