@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { ModeToggle } from './ModeToggle';
 
 export default function Header() {
   return (
@@ -91,6 +92,11 @@ export default function Header() {
                   
                   {/* Main Menu End */}
                   <div className="outer-box d-flex align-items-center flex-wrap">
+                    {/* Dark Mode Toggle */}
+                    <div style={{ marginRight: '15px' }}>
+                      <ModeToggle />
+                    </div>
+                    
                     {/* Search Btn */}
                     <div className="search-box-btn search-box-outer">
                       <span className="icon fa fa-search"></span>
