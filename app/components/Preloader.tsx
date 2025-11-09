@@ -18,19 +18,7 @@ export default function Preloader() {
   }, []);
 
   // Don't render anything until mounted to avoid hydration mismatch
-  if (!mounted) {
-    return (
-      <div className="preloader" style={{ display: 'none' }}>
-        <div className="loader">
-          <div className="outer-circle"></div>
-          <div className="inner-circle"></div>
-          <div className="dot"></div>
-        </div>
-      </div>
-    );
-  }
-
-  if (!isLoading) return null;
+  if (!mounted || !isLoading) return null;
 
   return (
     <div className="preloader">
