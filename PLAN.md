@@ -288,25 +288,29 @@ babanextjs/
 
 ---
 
-### 🔄 **2. RTL (Right-to-Left) Support**
-**Recommendation: Implement AFTER Phase 3.1 (Dark Mode)**
+### 🔄 **2. RTL (Right-to-Left) Support - IN PROGRESS** ⚡
+**Status:** Starting Implementation  
+**Start Date:** November 9, 2025
 
-**Why Wait:**
-- RTL affects entire layout and all pages
-- Better to have all pages and dark mode working first
-- Will require comprehensive testing
+**Implementation Approach:**
+- Using Next.js built-in i18n (Internationalization) support
+- Locale-based routing: `/en` (English/LTR) and `/ar` (Arabic/RTL)
+- Extract RTL CSS from static HTML template (`rtl.css`)
+- Implement language switcher in header
 
-**Implementation Plan:**
-- Extract RTL CSS from static HTML
-- Create language context/provider
-- Add language switcher component
-- Mirror all layouts for RTL
-- Update all directional properties
-- Test all pages in both LTR and RTL modes
+**Implementation Steps:**
+1. ✅ Configure `next.config.js` with i18n settings
+2. ⏳ Copy `rtl.css` from constrc-rtl template  
+3. ⏳ Create language switcher component
+4. ⏳ Add locale-based CSS loading in layout
+5. ⏳ Update Header with language toggle
+6. ⏳ Test all pages in both LTR and RTL modes
 
-**Your Advantage:** Having the RTL HTML will make extraction easier!
+**Your Advantage:** Having the RTL HTML makes extraction much easier!
 
-**Estimated Time:** 3-4 hours after Phase 3.1
+**Reference:** [Next.js Internationalization Guide](https://nextjs.org/docs/pages/guides/internationalization)
+
+**Estimated Time:** 3-4 hours
 
 ---
 
@@ -467,13 +471,17 @@ Located in `/public/assets/css/`:
 - ✅ Blog page with "Coming Soon" placeholder ready for CMS
 - ✅ Custom 404 error page
 - ✅ Proper Next.js routing and Link components throughout
-- ✅ **Phase 3.1:** Dark Mode fully implemented with next-themes
+- ✅ **Phase 3.1 COMPLETE:** Dark Mode fully implemented with next-themes
+  - Sun/Moon toggle in header
+  - Theme persistence (localStorage)
+  - All pages support dark mode
+  - No hydration errors
 
 **🔄 In Progress:**
-- None
+- ⚡ **Phase 3.2:** RTL (Right-to-Left) Support - Starting Now
 
 **Next Steps:** 
-1. ⏳ RTL (Right-to-Left) Support
+1. 🔄 RTL Support using Next.js i18n
 2. ⏳ Decap CMS Integration for Blog & Projects
 
 **Pages Available:**
