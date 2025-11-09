@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ModeToggle } from './ModeToggle';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   return (
@@ -92,6 +93,9 @@ export default function Header() {
                   
                   {/* Main Menu End */}
                   <div className="outer-box d-flex align-items-center flex-wrap">
+                    {/* Language Switcher */}
+                    <LanguageSwitcher />
+                    
                     {/* Dark Mode Toggle */}
                     <div style={{ marginRight: '15px' }}>
                       <ModeToggle />

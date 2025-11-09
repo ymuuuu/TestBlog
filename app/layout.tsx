@@ -7,6 +7,8 @@ import Cursor from "./components/Cursor";
 import ProgressWrap from "./components/ProgressWrap";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeBodyClass } from "./components/ThemeBodyClass";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import RTLLoader from "./components/RTLLoader";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -51,15 +53,17 @@ export default function RootLayout({
         <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon" />
       </head>
       <body className={`${raleway.variable} ${lexendDeca.variable} ${manrope.variable}`} suppressHydrationWarning>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <ThemeBodyClass />
-          <Cursor />
-          <Preloader />
+        <LanguageProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <RTLLoader />
+            <ThemeBodyClass />
+            <Cursor />
+            <Preloader />
           
           <div className="page-wrapper">
             {children}
@@ -94,7 +98,8 @@ export default function RootLayout({
           <Script src="/assets/js/element-in-view.js" strategy="afterInteractive" />
           <Script src="/assets/js/color-settings.js" strategy="afterInteractive" />
           <Script src="/assets/js/script.js" strategy="afterInteractive" />
-        </ThemeProvider>
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
