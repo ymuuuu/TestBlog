@@ -2,7 +2,6 @@
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import MarketingOne from './components/MarketingOne';
 import Link from 'next/link';
 
 export default function Home() {
@@ -917,7 +916,29 @@ export default function Home() {
       </section>
       {/* End Testimonial Three */}
 
-      <MarketingOne />
+      {/* Marketing One */}
+      <section className="marketing-one">
+        <div className="outer-container">
+          <div className="animation_mode">
+            <h1>High-Quality Craftsmanship</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
+            <h1 className="light">Home Construction</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
+            <h1>Building Construction</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
+          </div>
+          <div className="animation_mode-two">
+            <h1>Architecture & Building</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
+            <h1 className="light">Material Recycling</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
+            <h1>Tools and Equipment</h1>
+            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
+            <h1>Building Construction</h1>
+          </div>
+        </div>
+      </section>
+      {/* End Marketing One */}
 
       {/* Contact Two */}
       <section className="contact-two">
