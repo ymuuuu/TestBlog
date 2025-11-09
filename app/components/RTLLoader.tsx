@@ -1,12 +1,21 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function RTLLoader() {
   const { language, direction } = useLanguage();
+  const [mounted, setMounted] = useState(false);
+
+  // Wait for component to mount before manipulating DOM
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
+    // Only manipulate DOM after component is mounted (client-side only)
+    if (!mounted) return;
+
     // Update HTML lang attribute for accessibility
     document.documentElement.lang = language;
 
@@ -38,7 +47,7 @@ export default function RTLLoader() {
         rtlLink.remove();
       }
     }
-  }, [language, direction]);
+  }, [mounted, language, direction]);
 
   return null;
 }
