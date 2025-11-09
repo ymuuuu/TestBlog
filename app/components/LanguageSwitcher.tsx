@@ -11,14 +11,9 @@ export default function LanguageSwitcher() {
     setMounted(true);
   }, []);
 
+  // Return null during SSR to avoid hydration mismatch
   if (!mounted) {
-    return (
-      <div className="language-btn">
-        <div className="icon">
-          <span style={{ fontSize: '16px', fontWeight: 'bold' }}>EN</span>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   return (
