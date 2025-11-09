@@ -7,9 +7,19 @@ export default function RTLLoader() {
   const { language, direction } = useLanguage();
 
   useEffect(() => {
-    // Update HTML attributes
-    document.documentElement.dir = direction;
+    // Update HTML lang attribute for accessibility
     document.documentElement.lang = language;
+
+    // Add or remove 'rtl' class from page-wrapper
+    const pageWrapper = document.querySelector('.page-wrapper');
+    
+    if (pageWrapper) {
+      if (direction === 'rtl') {
+        pageWrapper.classList.add('rtl');
+      } else {
+        pageWrapper.classList.remove('rtl');
+      }
+    }
 
     // Load or remove RTL CSS
     const rtlLinkId = 'rtl-stylesheet';

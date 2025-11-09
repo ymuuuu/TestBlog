@@ -32,10 +32,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLanguageState(lang);
     setDirection(lang === 'ar' ? 'rtl' : 'ltr');
     localStorage.setItem('language', lang);
-    
-    // Update HTML dir attribute
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = lang;
   };
 
   const toggleLanguage = () => {
