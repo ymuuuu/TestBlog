@@ -917,7 +917,7 @@ export default function Home() {
       {/* End Testimonial Three */}
 
       {/* Contact Two */}
-      <section className="contact-two">
+      <section className="contact-two" style={{ paddingBottom: '120px' }}>
         <div className="auto-container">
           <div className="inner-container" style={{ backgroundImage: 'url(/assets/images/background/pattern-9.png)' }}>
             <div className="row clearfix">
