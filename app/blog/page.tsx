@@ -2,9 +2,24 @@
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MarketingOne from '../components/MarketingOne';
+import ClientsBoxOne from '../components/ClientsBoxOne';
 import Link from 'next/link';
+import { attributes as post1 } from '../../content/blog/2024-11-14-modern-construction-techniques.md';
+import { attributes as post2 } from '../../content/blog/2024-11-10-sustainable-building-practices.md';
 
 export default function Blog() {
+  // Array of blog posts
+  const blogPosts = [
+    { ...post1, slug: '2024-11-14-modern-construction-techniques' },
+    { ...post2, slug: '2024-11-10-sustainable-building-practices' },
+  ];
+
+  // Sort posts by date (newest first)
+  const sortedPosts = blogPosts.sort((a: any, b: any) => 
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
   return (
     <>
       <Header />
@@ -19,125 +34,68 @@ export default function Blog() {
               <li>Blog</li>
             </ul>
             <div className="page-title_text">
-              Whether you&apos;re building, remodeling, buying, or selling, we bring seamless project execution under one roof.
+              Insights, tips, and industry news from construction experts
             </div>
           </div>
         </div>
       </section>
       {/* End Page Title */}
 
-      {/* Coming Soon Section */}
-      <section className="coming-soon">
-        <div className="page-top_pattern" style={{ backgroundImage: 'url(/assets/images/background/pattern-13.png)' }}></div>
-        <div className="content">
-          <div className="content-inner">
-            <div className="auto-container">
-              <div className="logo">
-                <Link href="/">
-                  <img src="/assets/images/coming-soon-logo.svg" alt="" />
-                </Link>
-              </div>
-              
-              {/* Emailed Form */}
-              <div className="emailed-form">
-                <h3>Our Blog is Coming Soon</h3>
-                <div className="text">
-                  We&apos;re working on bringing you insightful content about construction, <br />
-                  architecture, and industry best practices. Subscribe to be notified when we launch!
-                </div>
-                <form method="post" action="/">
-                  <div className="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    <button type="submit">
-                      <span className="fa fa-paper-plane"></span>
-                    </button>
+      {/* Sidebar Page Container */}
+      <div className="sidebar-page-container">
+        <div className="auto-container">
+          <div className="row clearfix">
+
+            {/* Content Side / Blog List */}
+            <div className="content-side col-lg-12 col-md-12 col-sm-12">
+              <div className="row clearfix">
+
+                {sortedPosts.map((post: any, index: number) => (
+                  <div key={index} className="news-block_two col-lg-6 col-md-6 col-sm-12">
+                    <div className="news-block_two-inner">
+                      <div className="news-block_two-image">
+                        <Link href={`/blog/${post.slug}`}>
+                          <img src={post.featured_image} alt={post.title} />
+                        </Link>
+                      </div>
+                      <div className="news-block_two-content">
+                        <div className="news-block_two-more">
+                          {post.categories && post.categories[0] && (
+                            <span className="category">{post.categories[0]}</span>
+                          )}
+                        </div>
+                        <h3 className="news-block_two-heading">
+                          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                        </h3>
+                        <div className="news-block_two-text">{post.excerpt}</div>
+                        <div className="news-block_two-more">
+                          <Link href={`/blog/${post.slug}`}>
+                            Read More <i className="fa fa-long-arrow-alt-right"></i>
+                          </Link>
+                        </div>
+                        <div className="news-block_two-date">
+                          {new Date(post.date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
+                          {post.author && <span> • By {post.author}</span>}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </form>
-                
-                <div className="error-one_button" style={{ marginTop: '3rem' }}>
-                  <Link href="/" className="theme-btn btn-style-three">
-                    <span className="btn-wrap">
-                      <span className="text-one">
-                        Back To Home <i><img src="/assets/images/icons/arrow-1.svg" alt="" /></i>
-                      </span>
-                      <span className="text-two">
-                        Back To Home <i><img src="/assets/images/icons/arrow-1.svg" alt="" /></i>
-                      </span>
-                    </span>
-                  </Link>
-                </div>
+                ))}
+
               </div>
             </div>
+
           </div>
-        </div>
-      </section>
-      {/* End Coming Soon Section */}
-
-      {/* Marketing One */}
-      <section className="marketing-one">
-        <div className="outer-container">
-          <div className="animation_mode">
-            <h1>High-Quality Craftsmanship</h1>
-            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
-            <h1 className="light">Home Construction</h1>
-            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
-            <h1>Building Construction</h1>
-            <span className="marketing-one_icon"><img src="/assets/images/icons/star.png" alt="" /></span>
-          </div>
-          <div className="animation_mode-two">
-            <h1>Architecture & Building</h1>
-            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
-            <h1 className="light">Material Recycling</h1>
-            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
-            <h1>Tools and Equipment</h1>
-            <span className="marketing-one_icon"><img src="/assets/images/icons/star-1.png" alt="" /></span>
-            <h1>Building Construction</h1>
-          </div>
-        </div>
-      </section>
-      {/* End Marketing One */}
-
-      {/* Clients Box One */}
-      <div className="clients-box_one style-two">
-        <div className="clients-one_slider swiper-container">
-          <div className="swiper-wrapper">
-            <div className="swiper-slide">
-              <div className="client-image">
-                <a href="#"><img src="/assets/images/clients/1.png" alt="" /></a>
-              </div>
-            </div>
-
-            <div className="swiper-slide">
-              <div className="client-image">
-                <a href="#"><img src="/assets/images/clients/2.png" alt="" /></a>
-              </div>
-            </div>
-
-            <div className="swiper-slide">
-              <div className="client-image">
-                <a href="#"><img src="/assets/images/clients/3.png" alt="" /></a>
-              </div>
-            </div>
-
-            <div className="swiper-slide">
-              <div className="client-image">
-                <a href="#"><img src="/assets/images/clients/4.png" alt="" /></a>
-              </div>
-            </div>
-
-            <div className="swiper-slide">
-              <div className="client-image">
-                <a href="#"><img src="/assets/images/clients/3.png" alt="" /></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="text-center">
-          <div className="client-one_subtitle">we&apos;re proud to partner with best-in-class clients</div>
         </div>
       </div>
-      {/* End Clients Box One */}
+      {/* End Sidebar Page Container */}
+
+      <MarketingOne />
+      <ClientsBoxOne />
 
       <Footer />
     </>

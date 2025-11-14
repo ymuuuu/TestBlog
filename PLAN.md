@@ -375,8 +375,8 @@ Unlike traditional Next.js i18n with locale-based routing, this implementation u
    - **Projects** (title, description, images, location, builder, tags)
    - **Services** (title, icon, description, details)
    - **Testimonials** (name, role, company, rating, text, image)
-   - **Team Members** (name, role, bio, image, social links)
 
+   
 3. **Integration**
    - Create content fetching utilities
    - Update pages to use dynamic content

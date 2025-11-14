@@ -1,0 +1,70 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update
+
+# For local testing, comment out the backend above and uncomment below:
+# backend:
+#   name: test-repo
+
+media_folder: public/assets/images/uploads
+public_folder: /assets/images/uploads
+
+collections:
+  # Blog Posts Collection
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Publish Date", name: "date", widget: "datetime", required: true }
+      - { label: "Author", name: "author", widget: "string", default: "Admin", required: true }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: true }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: true, hint: "Short description shown on blog listing" }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
+      - { label: "Categories", name: "categories", widget: "select", multiple: true, options: ["Construction", "Architecture", "Building", "Design", "Renovation", "Safety", "Technology", "News"], default: ["Construction"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Add custom tags (optional)" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Show on homepage?" }
+
+  # Projects Collection
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Name", name: "title", widget: "string", required: true }
+      - { label: "Publish Date", name: "date", widget: "datetime", required: true }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: true }
+      - { label: "Gallery Images", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" }, required: false }
+      - { label: "Project Location", name: "location", widget: "string", required: true }
+      - { label: "Client Name", name: "client", widget: "string", required: false }
+      - { label: "Builder/Contractor", name: "builder", widget: "string", required: false }
+      - { label: "Project Value", name: "value", widget: "string", required: false, hint: "e.g., $2.5M" }
+      - { label: "Completion Date", name: "completion_date", widget: "string", required: false, hint: "e.g., March 2024" }
+      - { label: "Project Duration", name: "duration", widget: "string", required: false, hint: "e.g., 18 months" }
+      - { label: "Short Description", name: "excerpt", widget: "text", required: true, hint: "Brief description for project listing" }
+      - { label: "Full Description", name: "body", widget: "markdown", required: true }
+      - { label: "Categories", name: "categories", widget: "select", multiple: true, options: ["Residential", "Commercial", "Industrial", "Infrastructure", "Renovation", "Architecture"], default: ["Commercial"] }
+      - { label: "Services Provided", name: "services", widget: "list", required: false, hint: "List of services (e.g., Design, Construction, Management)" }
+      - { label: "Status", name: "status", widget: "select", options: ["Completed", "In Progress", "Upcoming"], default: "Completed" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Show on homepage?" }
+
+  # Testimonials Collection (Optional - for future use)
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Client Name", name: "name", widget: "string", required: true }
+      - { label: "Company/Role", name: "role", widget: "string", required: true }
+      - { label: "Company Logo", name: "company_logo", widget: "image", required: false }
+      - { label: "Client Photo", name: "photo", widget: "image", required: false }
+      - { label: "Rating", name: "rating", widget: "number", min: 1, max: 5, default: 5, value_type: "float" }
+      - { label: "Testimonial Text", name: "body", widget: "text", required: true }
+      - { label: "Project", name: "project", widget: "string", required: false, hint: "Related project name" }
+      - { label: "Date", name: "date", widget: "datetime", required: true }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
